@@ -1,5 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import { makeSharedMetadata } from "./_metadata-constants";
+import type { Metadata } from "next";
 
 export default function Home() {
   return (
@@ -64,3 +66,11 @@ export default function Home() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  ...makeSharedMetadata({
+    title: '查看我的 IP 地址 | 查询本机 IP 地址及归属地',
+    description: '查看你当前网络的 IP 地址、位置信息 和 网络连通性',
+    urlPath: '/'
+  })
+};
